@@ -1,0 +1,28 @@
+SimpleOSI.sh
+#! /bin/venv/bash 
+Set -x && ErrTrace
+
+logFile = (Date %Y %M %D %H:M%:S).log
+Daily = Diff $today().logfile $yesterday().logfile 
+tempDevices = ${ /usr/*.dev } print{f" $1 ':' $2 ':' $3 "}.log | grep -f in $tempDev } 
+            While -z exit
+Check_Router() {
+    RouterUP = { sh router details | less && sort nr -10 print(f" $1 $2 ")
+               { for -ein $RouterUP do
+                 
+Set_VLSM() {
+    SetSubnet = { 
+}
+
+Check_VLAN() {
+    CheckOSPF = 
+}
+
+Check_Switch() {
+  
+}
+
+Check_interfaces() {
+   MacAddress =
+}
+
