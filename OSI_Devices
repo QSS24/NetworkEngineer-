@@ -3,7 +3,7 @@ SimpleOSI.sh
 Set -x && Set -E
 
 cidr  = range(int(0:60)) 
-ipadr = { re.match('+random_int(1..255){3}\-\D*{3}\D*{3}'g) }.cidr
+ipadr = { re.match('+random_int(1..255){3}\.\D*{3}\.\D*{2|3}\.\D{1|2|3}'g) }.cidr
 
 
 Declare Glogal: 
@@ -47,7 +47,19 @@ All_Devices() {
      }
 
      Check_VLAN() {
-         CheckLan = ' sh vlan {print $1 $2 \n
+         CheckLan = ' sh ip interface details {print $1 $2 $3 $4 $5}.format( ... ) ' | -exec \n
+                    Case $Checklan in: 
+                         Try if Int[0:10] == none exit
+                         esle : 
+                              Int0) assign lan $ipdr
+                              ;;
+                              Int1) assign lan $ipdr
+                              ;;
+                              Int2) assign lan $ipdr
+                              ;;
+                         fi
+                    esac 
+                    
                     Assign vlan \n 
                     for etf in $vlan($eth(random(seq 1..10)) 
 
