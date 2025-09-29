@@ -2,41 +2,54 @@ SimpleOSI.sh
 #! /bin/venv/bash 
 Set -x && Set -E
 
-Declare Glogal: {
+Declare Glogal: 
      Varlogs = '/urs/var/syslogs'.logFile
      Devicelogs = '/temp/dev/'.logFile
      BinLogs = '/usr/bin/'.logFile
      Servicelogs = '/usr/initd/'.logFile
-     
+     Etclogs = ' /etc/ssh/sshd_config '.logFile 
+
 logFile = " (Date '%Y %M %D %H:M%:%S').log {print $1 ':' $2 ':' $3} | less && sort -nro tail 20 > $logFile.txt "
 
-Daily = SDiff
+Daily = SDiff 
+
 Cront -e 
-* * 8 * * -exec $All_Devices()
+* * 8 * * -exec nohup $All_Devices()
 
-All_Devices()
-{
-tempDevices = ${ /usr/*.dev } print{f" $1 ':' $2 ':' $3 "}.log | grep -f in $tempDev } 
-            While -z exit
+All_Devices() {
+     Case $All_Devices in: 
+          -f) 
+               if 
+               fi 
+          
+          esac 
 
-Check_Router() {
-    RouterUP = { sh router details | less && sort nr -10 print(f" $1 $2 ")
-               { for -ein $RouterUP do
-                 
-Set_VLSM() {
-    SetSubnet = { 
-}
+     Check_Network() { 
+          Network_config = ' Netstat -a 
+          }
 
-Check_VLAN() {
-    CheckOSPF = 
-}
+     tempDevices = ${ /usr/*.dev } print{f" $1 ':' $2 ':' $3 "}.log | grep -f in $tempDev } 
+         While -z exit
 
-Check_Switch() {
+     Check_Router() {
+         RouterUP = ' sh router details | less && sort nr -10 print(f" $1 $2 ") '
+               { for  $RouterUP do
+               }
+     Set_VLSM() {
+         SetSubnet = { 
+         }
+     }
+
+     Check_VLAN() {
+         CheckOSPF = 
+     }
+
+     Check_Switch() {
   
-}
+     }
 
-Check_interfaces() {
-   MacAddress =
-}
+     Check_interfaces() {
+        MacAddress = { MaCChanger mac='Random(0-255) seq(1..3)'
+     }
 
 }
