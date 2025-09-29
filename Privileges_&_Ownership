@@ -1,0 +1,4 @@
+DevicesOwnership.sh
+#! /bin/venv/bash bash
+Set -x && Set -e
+
