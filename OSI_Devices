@@ -6,12 +6,16 @@ Declare Glogal: {
      Varlogs = '/urs/var/syslogs'.logFile
      Devicelogs = '/temp/dev/'.logFile
      BinLogs = '/usr/bin/'.logFile
-     Servicelogs = ' /
+     Servicelogs = '/usr/initd/'.logFile
      
-logFile = " (Date '%Y %M %D %H:M%:%S').log {print $1 ':' $2 ':' $3} | less && sort -nr tail 20 > $logFile.txt "
+logFile = " (Date '%Y %M %D %H:M%:%S').log {print $1 ':' $2 ':' $3} | less && sort -nro tail 20 > $logFile.txt "
 
-Daily = SDiff 
+Daily = SDiff
+Cront -e 
+* * 8 * * -exec $All_Devices()
 
+All_Devices()
+{
 tempDevices = ${ /usr/*.dev } print{f" $1 ':' $2 ':' $3 "}.log | grep -f in $tempDev } 
             While -z exit
 
@@ -35,3 +39,4 @@ Check_interfaces() {
    MacAddress =
 }
 
+}
