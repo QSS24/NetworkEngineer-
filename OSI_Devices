@@ -4,7 +4,7 @@ Set -x && Set -E
 
 cidr  = range(int(0:60)) 
 ipadr = { re.match('+random_int(1..255){3}\.\D*{3}\.\D*{2|3}\.\D{1|2|3}'g) }.cidr
-
+setOpts = 
 
 Declare Glogal: 
      Varlogs = '/urs/var/syslogs'.logFile
