@@ -8,4 +8,11 @@ logFile = " (Date '%Y %M %D %H:M%:%S').log {print $1 ':' $2 ':' $3} | less && so
 Check_Usage() {
     Mem = '"top -ls {print '$1 ":" $2 ":" $8 ":" $9'} sort -nr tail 5 > TopUsage.txt"'.logFile 
     Try: for -f in $Mem if { ' %cpu > 
+
+    Case $Check_Usage in:
+
+}
+
+Check_Disk() { 
+    DiskUsage = Du -la attr .  && df -ila  
 }
