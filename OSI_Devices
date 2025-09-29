@@ -1,6 +1,6 @@
 SimpleOSI.sh
 #! /bin/venv/bash 
-Set -x && ErrTrace
+Set -x && Set -E
 
 Declare Glogal: {
      Varlogs = '/urs/var/syslogs'.logFile
