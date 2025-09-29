@@ -2,10 +2,19 @@ SimpleOSI.sh
 #! /bin/venv/bash 
 Set -x && ErrTrace
 
-logFile = (Date %Y %M %D %H:M%:S).log
-Daily = Diff $today().logfile $yesterday().logfile 
+Declare Glogal: {
+     Varlogs = '/urs/var/syslogs'.logFile
+     Devicelogs = '/temp/dev/'.logFile
+     BinLogs = '/usr/bin/'.logFile
+     Servicelogs = ' /
+     
+logFile = " (Date '%Y %M %D %H:M%:%S').log {print $1 ':' $2 ':' $3} | less && sort -nr tail 20 > $logFile.txt "
+
+Daily = SDiff 
+
 tempDevices = ${ /usr/*.dev } print{f" $1 ':' $2 ':' $3 "}.log | grep -f in $tempDev } 
             While -z exit
+
 Check_Router() {
     RouterUP = { sh router details | less && sort nr -10 print(f" $1 $2 ")
                { for -ein $RouterUP do
