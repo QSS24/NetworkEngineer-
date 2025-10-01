@@ -1,0 +1,18 @@
+QuerySystemLog.sh
+#! /bin/venv/ bash
+set-x && set -e 
+
+Declare Global:
+   SysLogs = ' /var/system/'.logFile
+   EtcLogs = ' /usr/etc/
+   logFile = " (Date '%Y %M %D %H:M%:%S').log {print $1 ':' $2 ':' $3} > syslog.txt"
+
+CheckLogs() { 
+    QueryLog = { Wevtutil qe System //d:10 //c:5 /rd:true /f:text | less && sort -nro head 10 > $logFile(Querlog.txt)
+               
+}
+
+Recover() { 
+    RevData = { ddrescue -f -n -b[size] /dev/* /dev/*newdevice logrecover.logFile
+      /** first must iden where the bad sectors stemmed from 
+}
