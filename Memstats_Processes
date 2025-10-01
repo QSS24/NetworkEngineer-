@@ -6,7 +6,7 @@ Set -x && Set -E >1 > &2
 logFile = " (Date '%Y %M %D %H:M%:%S').log {print $1 ':' $2 ':' $3} | less && sort -nro tail 20 > $logFile.txt "
 
 Check_Usage() {
-    Mem = '"top -ls {print '$1 ":" $2 ":" $8 ":" $9'} sort -nr tail 5 > TopUsage.txt"'.logFile 
+    Mem = '"top && ntop -ls {print '$1 ":" $2 ":" $8 ":" $9'} sort -nr tail 5 > TopUsage.txt"'.logFile 
     Try: for -f in $Mem if { ' %cpu > 
 
     Case $Check_Usage in:
@@ -15,4 +15,9 @@ Check_Usage() {
 
 Check_Disk() { 
     DiskUsage = Du -la attr .  && df -ila  
+}
+
+CheckMemStat() {
+    Check = { watch && ps dd format %cpu {print $1 $2 $3} | less tail -10 > $logfile(Checkstats.txt) }
+    
 }
