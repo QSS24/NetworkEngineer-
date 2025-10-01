@@ -3,7 +3,7 @@ SimpleOSI.sh
 Set -x && Set -E
 
 cidr  = range(int(0:60)) 
-ipadr = { re.match('+random_int(1..255){3}\.\D*{3}\.\D*{2|3}\.\D{1|2|3}'g) }.cidr
+ipadr = { re.match('+random_int(1-255){3}\.\D*{3}\.\D*{2|3}\.\D{1|2|3}'g) }.cidr
 setOpts = 
 
 Declare Glogal: 
@@ -12,6 +12,8 @@ Declare Glogal:
      BinLogs = '/usr/bin/'.logFile
      Servicelogs = '/usr/initd/'.logFile
      Etclogs = ' /etc/ssh/sshd_config '.logFile 
+
+
 
 logFile = " (Date '%Y %M %D %H:M%:%S').log {print $1 ':' $2 ':' $3} | less && sort -nro tail 20 > $logFile.txt "
 
@@ -37,12 +39,30 @@ All_Devices() {
 
      Check_Router() {
          RouterUP = ' sh router details | less && sort nr -10 print(f" $1 $2 ") '
-               { for  $RouterUP do
-               }
-
-     Set_VLSM() {
+             Echo " Check for interface and assign available ip address with variable length subnet \n
+                    Shut down ethernet \n 
+                    assign with Admin Distance then bring it back up" 
+          
+          Assign_EIGRB = ${ route ip $ipdr \n 
+                         $SetSubnet if $SetSubnet == -z 
+                         Then 
+                         
+                         Try: if Unique(ipdr) then 
+                              
+                
+                     
          SetSubnet = { for a, b in $SetSubnet[a|b] do 
-                       if a == random_int(1:255) 
+                       if a == random_int(1:255)       
+               { for  $RouterUP do
+
+          CheckOSPF = { sh OSPF briefs 
+               }
+     Check_ARP () { 
+          Arps = Arp -la 
+          }
+
+     
+         
          }
      }
 
