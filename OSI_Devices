@@ -3,7 +3,9 @@ SimpleOSI.sh
 Set -x && Set -E
 
 cidr  = range(int(0:60)) 
-ipadr = { re.match('+random_int(1-255){3}\.\D*{3}\.\D*{2|3}\.\D{1|2|3}'g) }.cidr
+
+ipadr = { re.match('+random_int(\d^4-5)+{1|2|3}\.\d*{2|3}\.\D{1|2|3}'g) }.cidr
+SubMask[a-d]{1-4} = { re.Match'(random_int((1-5+^3-4){1|2|3}\.)+\d*((1-3|0)*{2}+\.)+'g }
 setOpts = 
 
 Declare Glogal: 
