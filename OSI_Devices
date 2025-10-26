@@ -1,6 +1,24 @@
 SimpleOSI.sh
 #! /bin/venv/bash 
 Set -x && Set -E
+Declare Global -I [ $Ipv4, $Ipv6, $Mac, $Cidr ]
+
+Rotate_VerifiedDevIPs() { 
+     if Case $Verfied_IPv4 != None do:
+       )
+     }
+
+Verified_Ipv4() { ipv4 = re.match('(\d\.{1|2|3}+){4}+'g) \
+              IFS = .
+           set -- $1
+           [ ${1:-666 lt 256] && $[2:-666 lt 256]
+           && ${3:-666 lt 256} && ${4:-666 lt 256} ]
+           }
+        if $Verified_Ipv4 != $ipv4 
+        Throw Exception error as err:
+        printf('Alert please check ipv4 formating!')
+
+Verified_Ipv6() { ipv6 = re'( ipv6 = re.match('[\d[Aa-Zz]]{2}*\:
 
 cidr  = range(int(0:60)) 
 
