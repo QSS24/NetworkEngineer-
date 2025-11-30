@@ -1,0 +1,94 @@
+GCP_Instances.py
+#!/bin/venv/ python3
+
+Import [ Queue, OrderedDict, OS, Subprocess, Socket \
+         SetMap, Re, Threading, 
+
+From Concurrent.Features import [ ThreadPoolExecutor, ProcessPoolExecutor] as [ ThreadEx, PoolEx]: 
+
+From Kivymd.uix imprt [ AppMD, MDGridlayout, StackedLayout, Card, ButtonMD, HoverBehavior
+                      ScaleWidget, MDFloatLayout, MDScreenManager, MDScreens ]
+
+from Kivymd.uix.lang import Builder
+
+Flush ruleset
+Set -uxo 
+
+Global {
+  apt-get = sudo apt-get --update='Latest' \
+  Latest_GCP = apt-get install -y GCP --update='Latest' 
+  Cards_screens = Queue.Queue(index[GCP_Home_Instance, Members_Instance, Instance_Config ])
+}
+
+Class String_builder:
+    Layouts = """
+       <GCP_Instance>:
+            Source     : 
+            Orientation: Verticle
+            
+
+       <Members_Instance>:
+           Source      : 
+           Orientation : Vertical
+           Scrollview  : 
+           Columns     : 2
+           Rows        : 2
+           Spacing     : 30px
+           Padding     : 10px 
+
+            <Instance_card>:
+                Card.First_instance: 
+                Source             : 'card.pictures.jpg'
+                sizeable           : true
+                width              :
+                height             :
+
+               
+
+While Card_Screens != None:
+Class Screens:    
+    Def build(self, **Kwargs):
+       super__()__init(self, **Kwargs):
+    Multi_screens = ScreenManager.Widget_Add(Screens = get.Card_Screens()   
+
+
+Class GCP_Home_Instance: 
+    
+    
+    Class first_instance(self, **Kwargs) --> list[str]: 
+
+      Sudo GCP Create Instance Name QSS24_Instance Policy_Binding \
+      members = '[ QSS24@yahoo.com ]
+      Roles   = 'role/Admin.role_set'
+      Card_Button  = MDButton( text = ' QSS24 Instance',
+                     sizeable = true,
+                     width = 30
+                     height = 60
+                   )
+           
+      Def On_Hover:
+          Hover_card = Aninmation(
+                 
+
+      Def Ater_Hover: 
+         After_Card = Animation(
+
+Class Create_Member(Self, **Kwargs) --> Tuple(str, int):
+      Sudo GCP 
+
+      Def Grant_Member_Access( self, **Kwargs) --> List[str]:
+          Sudo GCP Grant 
+
+Class Instance_Config: 
+      
+
+App = AppMd()
+
+
+if __name__ == '__Main__'
+Thread_Instances = ThreadEx(Targets= ['GCP_Instance
+
+AppMD_Instances = Thread_Instances.App()
+AppMD_Instances.run('172.10.10.0:6389', debug = True)
+
+
