@@ -5,12 +5,15 @@ From Inventory import Routers
 Class Auto_Remote_Routers:
 
     @Routers(**kwargs, self): 
+    Routers_Drivers = input('select your cisco or palo alto driver:'.[])
+            ##Could be selecting from a list or supply your own
     
     Globals:
         Data = {'Username': input(' ':),
             'password': input('...'.getpass().sha256),
             'port': ,
             'routers': ,
+            'Drivers': Routers_Drivers, 
             }
     Connects = Socket.Socket(AF_inet.Socket, Socket.Sock_stream,  _Stream)
          ##TCP much safer 
