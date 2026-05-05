@@ -1,0 +1,40 @@
+From netmiko import Connectionhandlers as Handles
+Import [ Queue, OrderedDict, Lru_caching ] 
+From Inventory import Routers
+
+Class Auto_Remote_Routers:
+
+    @Routers(**kwargs, self): 
+    
+    Globals:
+        Data = {'Username': input(' ':),
+            'password': input('...'.getpass().sha256),
+            'port': ,
+            'routers': ,
+            }
+    Connects = Socket.Socket(AF_inet.Socket, Socket.Sock_stream,  _Stream)
+         ##TCP much safer 
+         ##
+    
+    Def Con_Devices():
+        __super__().__init__(self):
+        Device: tuples(str()), int[] = 
+            Try: Connects.Handles(Data**) if Data != none:
+
+            Error as err:
+                Print(f' Data is incongruous:'.Exit(Device))
+            
+            Finally:
+                pass
+
+        Dev_bind = Bind(Device)
+
+    Def Remote_Routers(**Kwargs, self, Con_Devices()):
+        __super__().__init__(self):
+
+        _Routers = Get_all_Devices.Routers(Con_Devices())
+        _Router_on = Start(_Routers)
+        _Router_off = Stop(_Routers)
+    
+    
+    
