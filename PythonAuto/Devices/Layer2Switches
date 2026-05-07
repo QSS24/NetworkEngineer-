@@ -1,0 +1,56 @@
+!#/usr/bin/venv python3 
+Flush Rules Set
+
+From netmiko import Connectionhandlers as Handles
+Import [ Queue, OrderedDict, Lru_caching ] 
+From Inventory import Routers
+
+Class Auto_Remote_Switches:
+
+    @Routers(**kwargs, self): 
+    Switches_Drivers = input('select your cisco or palo alto driver:'.[])
+            ##Could be selecting from a list or supply your own
+    
+    Globals:
+        Data = {'Username': input(' ':),
+            'password': input('...'.getpass().sha256),
+            'port': ,
+            'routers': ,
+            'Drivers': Switches_Drivers, 
+            }
+        NetWorkID = 
+        SwitchesIps =
+
+    Connects = Socket.Socket(AF_inet.Socket, Socket.Sock_stream,  _Stream)
+         ##TCP much safer 
+         ##
+    
+    Def Con_Devices():
+        __super__().__init__(self):
+        Device: tuples(str()), int[] = 
+            Try: Connects.Handles(Data**) if Data != none:
+
+            Error as err:
+                Print(f' Data is incongruous:'.Exit(Device))
+            
+            Finally:
+                pass
+
+        Dev_bind = Bind(Device)
+
+    Def Auto_Switches(**Kwargs, self, Con_Devices()):
+        __super__().__init__(self):
+        _Switches = Get_all_Switches.Switches(Con_Devices())
+
+        Try while True:
+            _Switches_on = Start(_Routers)
+            Config_: tuples(str(enumerate[])) = { config T \n
+                                      do show route ip brief \n
+                                      no network ${ " NetWorkIp['@#'] "}
+                                      NetWork $NetWorkIp['@$']
+                                      Ping !!
+            }
+
+        Else Error as Err:
+            yield { _Switches_off = Stop(_Switches) }            
+            printf(' Alert fraud! ') 
