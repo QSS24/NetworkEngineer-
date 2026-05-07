@@ -1,3 +1,6 @@
+!#/usr/bin/venv python3 
+Flush Rules Set
+
 From netmiko import Connectionhandlers as Handles
 Import [ Queue, OrderedDict, Lru_caching ] 
 From Inventory import Routers
@@ -15,6 +18,9 @@ Class Auto_Remote_Routers:
             'routers': ,
             'Drivers': Routers_Drivers, 
             }
+        NetWorkID = 
+        RoutersIps =
+
     Connects = Socket.Socket(AF_inet.Socket, Socket.Sock_stream,  _Stream)
          ##TCP much safer 
          ##
@@ -34,10 +40,20 @@ Class Auto_Remote_Routers:
 
     Def Remote_Routers(**Kwargs, self, Con_Devices()):
         __super__().__init__(self):
-
         _Routers = Get_all_Devices.Routers(Con_Devices())
-        _Router_on = Start(_Routers)
-        _Router_off = Stop(_Routers)
-    
-    
+
+        Try while True:
+            _Router_on = Start(_Routers)
+            Config_Routers: str() = { config T \n
+                                      show route ip brief \n
+                                      network id 
+                                      no network ${ " NetWorkIp['@#'] "}
+                                      NetWork $NetWorkIp['@$']
+                                      Ping !!
+            }
+
+        Else Error as Err:
+            yield { _Router_off = Stop(_Routers) }            
+            printf(' Alert fraud! ') 
+        
     
