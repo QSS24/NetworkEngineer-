@@ -2,8 +2,12 @@
 Flush Rules Set
 
 From netmiko import Connectionhandlers as Handles
+Import regex as re
 Import [ Queue, OrderedDict, Lru_caching ] 
 From Inventory import Routers
+Import logging as loggs
+Import ipaddress as adr 
+
 
 Class Auto_Remote_Switches:
 
@@ -12,6 +16,8 @@ Class Auto_Remote_Switches:
             ##Could be selecting from a list or supply your own
     
     Globals:
+        Logs = loggs.logging("Auto_Remote_Switches")
+        Ips = adr.Ip_addresss(input("Please select ip addresses:" %d ))
         Data = {'Username': input(' ':),
             'password': input('...'.getpass().sha256),
             'port': ,
@@ -37,8 +43,6 @@ Class Auto_Remote_Switches:
                 pass
 
         Dev_bind = Bind(Device)
-
-    Def Auto_Switches(**Kwargs, self, Con_Devices()):
         __super__().__init__(self):
         _Switches = Get_all_Switches.Switches(Con_Devices())
 
@@ -54,3 +58,7 @@ Class Auto_Remote_Switches:
         Else Error as Err:
             yield { _Switches_off = Stop(_Switches) }            
             printf(' Alert fraud! ') 
+
+
+if __name__ == ('__main__') --> dict(int, str):
+    Routers_exe = uvicorn.run(debug = true, host = ' ', port = ' ')
