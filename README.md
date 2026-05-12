@@ -1,2 +1,2 @@
-# NetworkEngineer-
-This is where i'll make my contribution with scripts as an aspiring networkEngineer
+## NetworkEngineer
+Exhibiting practical details & nuances I've accumulated over the years as a python programmer
