@@ -24,4 +24,14 @@ Check_Disk() {
 CheckMemStat() {
     Check = { watch && ps dd format %cpu {print $1 $2 $3} | less tail -10 > $logfile(Checkstats.txt) }
     
-}
+} 
+
+servers.py <<< EOT 
+
+Import Shutils 
+import [ argparse, os, preprocessing, socket, nmap] 
+
+Class Servers_Monit(str: enumerate[], **Kwargs) --> str, int:
+
+    
+
